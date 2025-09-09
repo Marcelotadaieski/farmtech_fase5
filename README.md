@@ -77,7 +77,7 @@ Estimar custos de hospedar a ML em uma **instância EC2** (On-Demand) com:
 - O caso exige **armazenamento em território nacional**. Hospedar a solução (EC2 + EBS) em **São Paulo** atende a exigência; N. Virginia **não atende** ao requisito.
 
 **Análise crítica – vantagens e trade-offs da solução escolhida (São Paulo)**
-- ✅ **Compliance by design** (dados em repouso no Brasil) e aderência ao enunciado.
+- ✅ **Compliance by design** (dados em repouso no Brasil).
 - ✅ **Menor latência** de ingestão e de resposta para usuários/sensores no país.
 - ✅ **Simplicidade operacional**: API e armazenamento na mesma região evitam transferência inter-regional.
 - ⚠️ **Trade-off**: **custo mensal maior** (~40% acima de N. Virginia). Para mitigar, poderíamos (fora do escopo da atividade) considerar otimização de instância, desligamento fora de pico, compressão de payloads e, em cenários reais, descontos contratuais/reservas.
@@ -85,5 +85,5 @@ Estimar custos de hospedar a ML em uma **instância EC2** (On-Demand) com:
 **Decisão**
 > Mesmo sendo mais cara, a região **América do Sul (São Paulo)** é a **melhor opção** para este case, pois cumpre o requisito legal de armazenamento nacional e oferece melhor acesso (latência/estabilidade) aos dados dos sensores no Brasil.
 
-🎥 **Vídeo da Entrega 2**: [link do YouTube aqui]  
+🎥 **Vídeo da Entrega 2**: [https://youtu.be/p9gUNXpiuGk]  
 

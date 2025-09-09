@@ -58,8 +58,7 @@ Estimar custos de hospedar a ML em uma **instância EC2** (On-Demand) com:
 | EUA Leste (N. Virginia)    | t3.small          | 2     | 2 GiB   | 50 GB EBS      | **$2.44** |
 
 📸 Prints:  
-- ![AWS São Paulo](./figures/aws_calc_sp.png)  
-- ![AWS N. Virginia](./figures/aws_calc_use1.png)  
+- ![Comparação AWS](imagens/comparações_aws_ec2.png)
 
 ### Análise/Justificativa
 **Cenário:** A API recebe dados de sensores em fazendas no Brasil e executa a inferência do modelo de ML.

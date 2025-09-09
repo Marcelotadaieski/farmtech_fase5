@@ -50,43 +50,41 @@ Estimar custos de hospedar a ML em uma **instância EC2** (On-Demand) com:
 - 50 GB armazenamento  
 - Rede até 5 Gbps  
 
-### Comparação de Custos
-| Região        | vCPUs | RAM  | Armazenamento | Rede    | Custo Mensal |
-|---------------|-------|------|---------------|---------|--------------|
-| São Paulo     | 2     | 1GiB | 50 GB EBS     | ≤5Gbps  | R$ xxx / US$ xxx |
-| N. Virginia   | 2     | 1GiB | 50 GB EBS     | ≤5Gbps  | US$ xxx       |
+### Comparação de custos entre regiões
+
+| Região                  | Tipo da Instância | vCPUs | Memória | Armazenamento | Custo Mensal (USD) |
+|--------------------------|------------------|-------|---------|---------------|---------------------|
+| América do Sul (São Paulo) | t3.small         | 2     | 2 GiB   | 50 GB EBS     | **$4.08** |
+| EUA Leste (N. Virginia)    | t3.small          | 2     | 2 GiB   | 50 GB EBS      | **$2.44** |
 
 📸 Prints:  
 - ![AWS São Paulo](./figures/aws_calc_sp.png)  
 - ![AWS N. Virginia](./figures/aws_calc_use1.png)  
 
-### Justificativa
-- **N. Virginia** costuma ser mais barata devido à escala global da AWS.  
-- Contudo, por requisitos de **residência de dados no Brasil**, **latência menor** e **compliance regulatório**, a melhor escolha para este projeto é **São Paulo (sa-east-1)**.  
+### Análise/Justificativa
+**Cenário:** A API recebe dados de sensores em fazendas no Brasil e executa a inferência do modelo de ML.
+
+**Comparação de custo (On-Demand, 2 vCPUs, ~2 GiB RAM, 50 GB EBS gp3)**
+- América do Sul (São Paulo): **US$ 4,08/mês**
+- EUA Leste (N. Virginia): **US$ 2,44/mês**
+→ N. Virginia é ~**40%** mais barata.
+
+**Acesso rápido aos dados (latência/throughput)**
+- **Menor latência** entre sensores no Brasil e a API quando hospedada em **São Paulo** (rota doméstica/peering local), reduzindo atrasos de ingestão e resposta da inferência.
+- **Menos variabilidade (jitter)** e rota mais curta → melhor estabilidade para streams/eventos dos sensores.
+- **Menos hops internacionais** → menor chance de perda/retentativa, o que melhora o tempo de disponibilidade dos dados “quase em tempo real”.
+
+**Restrições legais**
+- O caso exige **armazenamento em território nacional**. Hospedar a solução (EC2 + EBS) em **São Paulo** atende a exigência; N. Virginia **não atende** ao requisito.
+
+**Análise crítica – vantagens e trade-offs da solução escolhida (São Paulo)**
+- ✅ **Compliance by design** (dados em repouso no Brasil) e aderência ao enunciado.
+- ✅ **Menor latência** de ingestão e de resposta para usuários/sensores no país.
+- ✅ **Simplicidade operacional**: API e armazenamento na mesma região evitam transferência inter-regional.
+- ⚠️ **Trade-off**: **custo mensal maior** (~40% acima de N. Virginia). Para mitigar, poderíamos (fora do escopo da atividade) considerar otimização de instância, desligamento fora de pico, compressão de payloads e, em cenários reais, descontos contratuais/reservas.
+  
+**Decisão**
+> Mesmo sendo mais cara, a região **América do Sul (São Paulo)** é a **melhor opção** para este case, pois cumpre o requisito legal de armazenamento nacional e oferece melhor acesso (latência/estabilidade) aos dados dos sensores no Brasil.
 
 🎥 **Vídeo da Entrega 2**: [link do YouTube aqui]  
 
----
-
-## 🏆 Desafios “Ir Além” (opcionais)
-O grupo poderá explorar:  
-- **Opção 1:** ESP32 + Wi-Fi + Sensores → envio de dados para BD/MQTT/HTML.  
-- **Opção 2:** ESP32 + Machine Learning → classificar saúde da plantação em Saudável / Não saudável.  
-
-Documentação parcial em [`/ir-alem/`](./ir-alem).  
-
----
-
-## 🔧 Como Executar
-```bash
-# Criar e ativar ambiente virtual
-python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-
-# Instalar dependências
-pip install -r requirements.txt
-# ou
-pip install jupyter pandas numpy matplotlib seaborn scikit-learn xgboost
-
-# Abrir o notebook
-jupyter notebook

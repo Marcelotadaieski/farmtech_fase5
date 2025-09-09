@@ -61,7 +61,7 @@ Estimar custos de hospedar a ML em uma **instância EC2** (On-Demand) com:
 - ![Comparação AWS](imagens/comparações_aws_ec2.png)
 
 ### Análise/Justificativa
-**Cenário:** A API recebe dados de sensores em fazendas no Brasil e executa a inferência do modelo de ML.
+**Cenário:** A API recebe dados de sensores em fazendas no Brasil e executa a inferência do modelo de ML. É necessário acessar rapidamente os dados dos sensores e há restrições legais para armazenamento no exterior.
 
 **Comparação de custo (On-Demand, 2 vCPUs, ~2 GiB RAM, 50 GB EBS gp3)**
 - América do Sul (São Paulo): **US$ 4,08/mês**

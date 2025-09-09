@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Data cache
+*.log
+*.tmp
+*.sqlite3
+
+# Secrets (ensure you actually keep secrets elsewhere)
+*.env
+.env
+.env.*
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache/
+
+# Results / artifacts
+outputs/
+figures/
+reports/

@@ -44,3 +44,5 @@ htmlcov/
 outputs/
 figures/
 reports/.Rhistory
+.Rhistory
+data/crop_yield.csv

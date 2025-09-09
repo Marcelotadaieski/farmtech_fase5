@@ -35,7 +35,7 @@
    - Modelo com melhor desempenho.  
    - Limitações (dataset pequeno, variáveis limitadas, ausência de tuning).  
 
-📓 Notebook disponível em [`/notebooks/MarceloTadaieski_rmXXXXX_pbl_fase5.ipynb`](./notebooks/MarceloTadaieski_rmXXXXX_pbl_fase5.ipynb)  
+📓 Notebook disponível em [`/notebooks/MarceloTadaieski_rm563731_pbl_fase5.ipynb`](./notebooks/MarceloTadaieski_rm563731_pbl_fase5.ipynb)  
 
 🎥 **Vídeo da Entrega 1**: [link do YouTube aqui]  
 

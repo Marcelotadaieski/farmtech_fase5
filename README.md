@@ -37,7 +37,7 @@
 
 📓 Notebook disponível em [`/notebooks/MarceloTadaieski_rm563731_pbl_fase5.ipynb`](./notebooks/MarceloTadaieski_rm563731_pbl_fase5.ipynb)  
 
-🎥 **Vídeo da Entrega 1**: [link do YouTube aqui]  
+🎥 **Vídeo da Entrega 1**: [https://youtu.be/LiIk1wGOlZg]
 
 ---
 
